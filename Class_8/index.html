@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Comments</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Hey write something to wish me.</h1>
+    <p id="output"></p>
+    <input id="inputField" type="text" placeholder="Add a wish" />
+    <button type="button" class="add" onclick="addText()">Add Text</button>
+    <button type="button" class="remove" onclick="removeAllText()">
+      Remove All
+    </button>
+
+    <script>
+      function addText() {
+        const inputField = document.getElementById("inputField");
+        const output = document.getElementById("output");
+        const text = inputField.value.trim();
+        if (text) {
+          const addNewLine = document.createElement("p");
+          addNewLine.textContent = text;
+          output.appendChild(addNewLine);
+          inputField.value = "";
+        }
+      }
+
+      function removeAllText() {
+        const output = document.getElementById("output");
+        output.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

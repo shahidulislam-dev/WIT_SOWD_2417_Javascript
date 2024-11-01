@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Elament</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM Test</title>
+  </head>
+  <body>
+    <div id="header">Welcome to JS DOM Test!!</div>
+    <div id="content">
+      <div class="list" id="books">
+        <h3>List of books</h3>
+        <ul></ul>
+      </div>
+      <div class="list" id="fruits">
+        <h3>List of fruits</h3>
+        <ul></ul>
+      </div>
+      <div class="list" id="places">
+        <h3>List of places</h3>
+        <ul></ul>
+      </div>
+      <div class="list" id="movies">
+        <h3>List of movies</h3>
+        <ul></ul>
+      </div>
+      <div class="list" id="sports">
+        <h3>List of sports</h3>
+        <ul></ul>
+      </div>
+    </div>
+
+    <script>
+      // Set background color for body
+      document.body.style.backgroundColor = "#f4c894";
+
+      // Style header
+      const header = document.getElementById("header");
+      header.style.backgroundColor = "#a12727";
+      header.style.color = "white";
+      header.style.padding = "10px";
+      header.style.textAlign = "center";
+      header.style.fontSize = "2em";
+      header.style.marginBottom = "20px";
+
+      // Style content
+      const content = document.getElementById("content");
+      content.style.display = "flex";
+      content.style.flexWrap = "wrap";
+      content.style.justifyContent = "center";
+      content.style.gap = "20px";
+
+      // Function to add list items
+      function addListItems(id, items) {
+        const ul = document.querySelector(`#${id} ul`);
+        items.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+      }
+
+      // Declare list items
+      const bookItems = ["book name 1", "book name 2", "book name 3", "book name 4", "book name 5"];
+      const fruitItems = ["fruit name 1", "fruit name 2", "fruit name 3", "fruit name 4", "fruit name 5", "fruit name 6", "fruit name 7"];
+      const placeItems = ["Place name 1", "Place name 2", "Place name 3", "Place name 4"];
+      const movieItems = ["Movie name 1", "Movie name 2", "Movie name 3", "Movie name 4"];
+      const sportItems = ["sport name 1", "sport name 2", "sport name 3", "sport name 4"];
+
+      // Add list items to respective ul elements
+      addListItems("books", bookItems);
+      addListItems("fruits", fruitItems);
+      addListItems("places", placeItems);
+      addListItems("movies", movieItems);
+      addListItems("sports", sportItems);
+
+      // Style each list div
+      const lists = document.getElementsByClassName("list");
+      for (let i = 0; i < lists.length; i++) {
+        lists[i].style.border = "2px solid black";
+        lists[i].style.padding = "20px";
+        lists[i].style.backgroundColor = "#f7f7f7";
+        lists[i].style.width = "200px";
+        lists[i].style.boxSizing = "border-box";
+        lists[i].style.textAlign = "center";
+        lists[i].style.borderRadius = "10px";
+      }
+
+      // Style specific list items
+      document.querySelectorAll("#books ul li")[0].style.color = "turquoise";
+      document.querySelectorAll("#books ul li")[2].style.color = "royalblue";
+      document.querySelectorAll("#fruits ul li")[3].style.color = "royalblue";
+      document.querySelectorAll("#fruits ul li")[6].style.color = "magenta";
+      document.querySelectorAll("#places ul li")[1].style.color = "royalblue";
+      document.querySelectorAll("#movies ul li")[2].style.color = "gold";
+      document.querySelectorAll("#sports ul li")[0].style.color = "royalblue";
+      document.querySelectorAll("#sports ul li")[2].style.color = "royalblue";
+
+      // Log content to console
+      console.log("Books:", document.getElementById("books").innerText);
+      console.log("Fruits:", document.getElementById("fruits").innerText);
+      console.log("Places:", document.getElementById("places").innerText);
+      console.log("Movies:", document.getElementById("movies").innerText);
+      console.log("Sports:", document.getElementById("sports").innerText);
+
+      // Style headings of each list
+      document.getElementById("books").querySelector("h3").style.color = "turquoise";
+      document.getElementById("fruits").querySelector("h3").style.color = "limegreen";
+      document.getElementById("places").querySelector("h3").style.color = "royalblue";
+      document.getElementById("movies").querySelector("h3").style.color = "magenta";
+      document.getElementById("sports").querySelector("h3").style.color = "red";
+
+    </script>
+  </body>
+</html>
